@@ -10,7 +10,7 @@ body {
 }
 
 .project-card {
-    width: 350px
+    width: 350px;
 }
 
 .preview-image {
@@ -37,6 +37,8 @@ body {
 .project-title {
     font-size: 20px;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #gamehub-title {
@@ -56,9 +58,10 @@ body {
     grid-gap: 5px;
     grid-template-columns: 1fr;
     grid-template-areas: "desc" "github-rep";
-    grid-template-rows: 160px 25px;
+    grid-template-rows: auto 25px;
     background-color: var(--white);
-    height: 200px;
+    min-height: 200px;
+    height: auto;
     padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -93,8 +96,12 @@ body {
 @media only screen and (max-width: 1120px) {
     .projects {
         grid-template-columns: 1fr 1fr;
-        gap: 25px;
-        margin-bottom: 15px;
+    }
+
+    #nature_and_food_blog-card {
+        margin: auto;
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 }
 
@@ -102,11 +109,16 @@ body {
     .projects {
         grid-template-columns: 1fr;
     }
+
+    #nature_and_food_blog-card {
+        margin: none;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
 }
 
 @media only screen and (max-width: 430px) {
     .github-rep-link, .github-rep-link img {
-        grid-area: github-rep;
         width: 50px;
         height: 50px;
     }
@@ -116,8 +128,12 @@ body {
     }
 
     .project-desc {
-        height: 225px;
-        grid-gap: 5px;
-        grid-template-rows: 160px 40px;
+        grid-template-rows: auto 55px;
+    }
+}
+
+@media only screen and (max-width: 384px) {
+    .project-card {
+        width: 90vw;
     }
 }
